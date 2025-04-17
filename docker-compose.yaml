@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user123
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: SanemDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d
+
+
+
+  app:
+    build: .
+    container_name: my-node-app
+    ports:
+      - "13002:3000"
+    depends_on:
+      - db
+    environment:
+      PGUSER: user123
+      PGPASSWORD: password123
+      PGDATABASE: SanemDB
+      PGHOST: db
+      PGPORT: 5432
