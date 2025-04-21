@@ -24,12 +24,12 @@ CREATE TABLE IF NOT EXISTS Item (
     idItem SERIAL PRIMARY KEY,
     tipo VARCHAR(50) NOT NULL,
     tamanho VARCHAR(20),
-    quantidade INT NOT NULL
+    quantidade INT NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS Movimento (
     idMovimento SERIAL PRIMARY KEY,
-    data DATE NOT NULL,
+    data TIMESTAMP NOT NULL DEFAULT now(),
     tipo VARCHAR(20) NOT NULL,
     idVoluntario INT NOT NULL,
     idBeneficiario INT,
