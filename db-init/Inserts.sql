@@ -28,9 +28,9 @@ INSERT INTO Item (tipo, tamanho, quantidade) VALUES
 
 -- Tabela Movimento
 INSERT INTO Movimento (tipo, idVoluntario, idBeneficiario) VALUES
-('Doação', 1, 1),
-('Entrega', 2, 1),
-('Descarte', 3, 3);
+('Doação', 4, 1),
+('Entrega', 5, 1),
+('Descarte', 6, null);
 
 -- Tabela ItemMovimento
 INSERT INTO ItemMovimento (idItem, idMovimento, quantidade) VALUES

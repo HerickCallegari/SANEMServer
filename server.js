@@ -56,6 +56,8 @@ app.get('/setup', async (req, res) => {
     }
 })
 
+
+
 // Inicia o servidor
 app.listen(port, () => {
     console.log(`server esta funcionando na porta ${port}`)

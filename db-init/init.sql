@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS Pessoa (
 
 CREATE TABLE IF NOT EXISTS Beneficiario (
     idBeneficiario INT PRIMARY KEY,
-    contaCorrente VARCHAR(20),
     email VARCHAR(100),
     aprovado BOOLEAN,
     FOREIGN KEY (idBeneficiario) REFERENCES Pessoa(idPessoa) ON DELETE CASCADE
@@ -17,6 +16,7 @@ CREATE TABLE IF NOT EXISTS Beneficiario (
 
 CREATE TABLE IF NOT EXISTS Voluntario (
     idVoluntario INT PRIMARY KEY,
+    senha VARCHAR(100) NOT NULL,
     FOREIGN KEY (idVoluntario) REFERENCES Pessoa(idPessoa) ON DELETE CASCADE
 );
 
