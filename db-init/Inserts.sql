@@ -1,4 +1,3 @@
-
 -- Tabela Pessoa
 INSERT INTO Pessoa (nome, telefone, endereco, RG, CPF) VALUES
 ('João Silva', '99999-1234', 'Rua das Flores, 123', '12345678', '111.111.111-11'),
@@ -9,16 +8,16 @@ INSERT INTO Pessoa (nome, telefone, endereco, RG, CPF) VALUES
 ('Fernanda Costa Lima', '94444-3333', 'Travessa da Paz, 987', '67890123', '666.666.666-66');
 
 -- Tabela Beneficiario (associado a Pessoa)
-INSERT INTO Beneficiario (idBeneficiario, contaCorrente, email, aprovado) VALUES
-(1, '12345-6', 'joao@email.com', true),
-(2, '23456-7', 'maria@email.com', false),
-(3, '34567-8', 'carlos@email.com', true);
+INSERT INTO Beneficiario (idBeneficiario, email, aprovado) VALUES
+(1, 'joao@email.com', true),
+(2, 'maria@email.com', false),
+(3, 'carlos@email.com', true);
 
--- Tabela Voluntario (associado a Pessoa)
-INSERT INTO Voluntario (idVoluntario) VALUES
-(4),
-(5),
-(6);
+-- Tabela Voluntario (associado a Pessoa) — com senha
+INSERT INTO Voluntario (idVoluntario, senha) VALUES
+(4, 'senha123'),
+(5, 'senha456'),
+(6, 'senha789');
 
 -- Tabela Item
 INSERT INTO Item (tipo, tamanho, quantidade) VALUES
