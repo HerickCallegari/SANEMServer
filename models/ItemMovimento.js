@@ -1,4 +1,9 @@
-export default class ItemMovimento {
+ class ItemMovimento {
+  idItemMovimento;
+  idItem;
+  idMovimento;
+  quantidade;
+
     constructor(idItemMovimento, idItem, idMovimento, quantidade) {
       this.idItemMovimento = idItemMovimento;
       this.idItem = idItem;

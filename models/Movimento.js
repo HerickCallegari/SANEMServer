@@ -1,4 +1,9 @@
-export default class Movimento {
+class Movimento {
+  idMovimento;
+  data;
+  tipo;
+  idVoluntario;
+  idBeneficiario;
     constructor(idMovimento, data = new Date(), tipo, idVoluntario, idBeneficiario) {
       this.idMovimento = idMovimento;
       this.data = data;

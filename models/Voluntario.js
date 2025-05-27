@@ -1,6 +1,7 @@
 import Pessoa from './Pessoa.js';
 
-export default class Voluntario extends Pessoa {
+class Voluntario extends Pessoa {
+  senha;
   constructor(idPessoa, nome, telefone, endereco, RG, CPF, senha) {
     super(idPessoa, nome, telefone, endereco, RG, CPF);
     this.senha = senha;
