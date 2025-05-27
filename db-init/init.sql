@@ -27,15 +27,19 @@ CREATE TABLE IF NOT EXISTS Item (
     quantidade INT NOT NULL DEFAULT 0
 );
 
+-- Enum para tipo de movimento
+CREATE TYPE tipo_movimento AS ENUM ('Doacao', 'Retirada', 'Descarte');
+
 CREATE TABLE IF NOT EXISTS Movimento (
     idMovimento SERIAL PRIMARY KEY,
     data TIMESTAMP NOT NULL DEFAULT now(),
-    tipo VARCHAR(20) NOT NULL,
+    tipo tipo_movimento NOT NULL,
     idVoluntario INT NOT NULL,
     idBeneficiario INT,
     FOREIGN KEY (idVoluntario) REFERENCES Voluntario(idVoluntario) ON DELETE SET NULL,
     FOREIGN KEY (idBeneficiario) REFERENCES Beneficiario(idBeneficiario) ON DELETE SET NULL
 );
+
 
 CREATE TABLE IF NOT EXISTS ItemMovimento (
     idItemMovimento SERIAL PRIMARY KEY,
